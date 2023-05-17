@@ -1,0 +1,22 @@
+<div class="container">
+  <div>
+    <table class="table" style="background: radial-gradient(white, aqua );">
+      <tbody>
+        <tr>
+          <th scope="row">{{indice+1}}.</th>
+          <td><b>Nombre: </b>{{empleadoDeLista.nombre}}</td>
+          <td><b>Apellido: </b>{{empleadoDeLista.apellido}}</td>
+          <td><b>Cargo: </b>{{empleadoDeLista.cargo}}</td>
+          <td><b>Años de Experiencia: </b>{{empleadoDeLista.experiencia}}</td>
+          <td><b>Salario: </b>{{empleadoDeLista.salario}}</td>
+          <td><b>Observación: </b>{{empleadoDeLista.nombre}} es <span *ngIf="empleadoDeLista.experiencia >=5 ; else junior"
+              [ngClass]="{experiencia: empleadoDeLista.experiencia==empleadoDeLista.experiencia}">
+              Senior por los años de experiencia
+            </span>
+            <ng-template #junior> Junior por los años de experiencia</ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
