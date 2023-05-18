@@ -7,8 +7,14 @@ import { Empleado } from '../empleado.module';
   styleUrls: ['./empleado-hijo.component.css']
 })
 export class EmpleadoHijoComponent {
- 
+
 
  @Input() empleadoDeLista:Empleado;
  @Input() indice:number;
+
+ arrayCaracteristicas = [''];
+
+ agregarCaracteristicaPadre(nuevaCaracteristica: string) {
+   this.arrayCaracteristicas.push(nuevaCaracteristica);
+ }
 }

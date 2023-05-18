@@ -9,13 +9,19 @@
           <td><b>Cargo: </b>{{empleadoDeLista.cargo}}</td>
           <td><b>Años de Experiencia: </b>{{empleadoDeLista.experiencia}}</td>
           <td><b>Salario: </b>{{empleadoDeLista.salario}}</td>
-          <td><b>Observación: </b>{{empleadoDeLista.nombre}} es <span *ngIf="empleadoDeLista.experiencia >=5 ; else junior"
+          <td><b>Observación: </b>{{empleadoDeLista.nombre}} es <span
+              *ngIf="empleadoDeLista.experiencia >=5 ; else junior"
               [ngClass]="{experiencia: empleadoDeLista.experiencia==empleadoDeLista.experiencia}">
               Senior por los años de experiencia
             </span>
             <ng-template #junior> Junior por los años de experiencia</ng-template>
           </td>
         </tr>
+        <app-caracteristicas-empleado
+          (caracteristicasEmpleados)="agregarCaracteristicaPadre($event)"></app-caracteristicas-empleado>
+        <ul style="list-style: none;">
+          <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
+        </ul>
       </tbody>
     </table>
   </div>

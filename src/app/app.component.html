@@ -39,8 +39,8 @@
     </form>
     <br><br>
   </div>
-  <h2 style="text-align: center;">{{titleTabla}}</h2>
 
+  <h2 style="text-align: center;">{{titleTabla}}</h2>
   <app-empleado-hijo *ngFor="let empleado of empleados; let i=index" [empleadoDeLista]="empleado"
     [indice]="i"></app-empleado-hijo>
 </div>

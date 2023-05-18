@@ -26,4 +26,6 @@ export class AppComponent {
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroExperiencia, this.cuadroSalario);
     this.empleados.push(miEmpleado);
   }
+
+
 }

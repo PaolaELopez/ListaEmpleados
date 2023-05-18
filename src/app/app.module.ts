@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { EmpleadoHijoComponent } from './empleado-hijo/empleado-hijo.component';
+import { CaracteristicasEmpleadoComponent } from './caracteristicas-empleado/caracteristicas-empleado.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadoHijoComponent,
+    CaracteristicasEmpleadoComponent,
   ],
   imports: [
     BrowserModule,
