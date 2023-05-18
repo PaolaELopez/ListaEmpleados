@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Empleado } from './empleado.module';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,10 @@ import { Empleado } from './empleado.module';
 export class AppComponent {
   title = 'REGISTRAR EMPLEADOS';
   titleTabla = "LISTADO DE EMPLEADOS"
+
+  constructor(private miServicio:ServicioEmpleadosService){
+
+  }
 
   empleados: Empleado[] = [
     new Empleado("Paola", "Estupiñan", "Desarrolladora frontend", 3,  7000000),
@@ -24,6 +29,7 @@ export class AppComponent {
 
   guardarClientes() {
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroExperiencia, this.cuadroSalario);
+    this.miServicio.muestraMensaje("Se va a registar el empleado con nombre de: " + miEmpleado.nombre);
     this.empleados.push(miEmpleado);
   }
 

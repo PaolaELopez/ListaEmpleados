@@ -1,8 +1,8 @@
 <div class="container">
   <div>
-    <table class="table" style="background: radial-gradient(white, aqua );">
+    <table class="table" style="background: radial-gradient(white, aqua ); width: 100%;">
       <tbody>
-        <tr>
+        <tr style="border-top: 10px;">
           <th scope="row">{{indice+1}}.</th>
           <td><b>Nombre: </b>{{empleadoDeLista.nombre}}</td>
           <td><b>Apellido: </b>{{empleadoDeLista.apellido}}</td>
@@ -16,12 +16,15 @@
             </span>
             <ng-template #junior> Junior por los años de experiencia</ng-template>
           </td>
+          <td><b>Caracteristicas del empleado: </b>
+            <ul style="list-style:none; padding-left: 0px;">
+              <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
+            </ul>
+          </td>
+          <td><app-caracteristicas-empleado
+              (caracteristicasEmpleados)="agregarCaracteristicaPadre($event)"></app-caracteristicas-empleado></td>
+
         </tr>
-        <app-caracteristicas-empleado
-          (caracteristicasEmpleados)="agregarCaracteristicaPadre($event)"></app-caracteristicas-empleado>
-        <ul style="list-style: none;">
-          <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
-        </ul>
       </tbody>
     </table>
   </div>
